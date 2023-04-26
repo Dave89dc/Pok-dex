@@ -4,17 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./Assets/pokéball.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <title>PokéDex</title>
 </head>
 <body>
+    <header>
+        <img class="pokémon-logo" src="./Assets/pokemon-logo.png" alt="Pokémon Logo">
+    </header>
+    <div class="main-box">
+        <div id="pokémon-box" class="pokémon-box">
     
-    <div id="pokémon-box">
-
-
+        </div>
     </div>
-    <button onclick="loadPreviousPage()">Previous Page</button>
-    <button onclick="loadNextPage()">Net Page</button>
+    <div class="button-box">
+        <button onclick="loadPreviousPage()">Previous Page</button>
+        <button onclick="loadNextPage()">Net Page</button>
+    </div>
 
 </body>
 <script src="./Services/poké-service.js"></script>
