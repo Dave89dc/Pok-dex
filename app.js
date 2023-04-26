@@ -1,22 +1,37 @@
 let actualPage;
 
-// PokéService.getNextPokémon(actualPage).then(pokémon => {
-//     actualPage = pokémon;
-//     console.log(actualPage);
-// });
+const pokédex = new PokédexPage();
 
 loadNextPage();
 
 function loadNextPage(){
+    // if(actualPage !== undefined && actualPage.next === null){
+    //     return;
+    // };
     PokéService.getNextPokémon(actualPage).then(pokémonPage => {
         actualPage = pokémonPage;
-        console.log(actualPage);
+        pokédex.removePokémonPage();
+        pokédex.addPokémonPage(actualPage.results);
+        console.log(pokédex)
+        displayPokémon();
     });
 };
 
 function loadPreviousPage(){
     PokéService.getPreviousPokémon(actualPage).then(pokémonPage => {
         actualPage = pokémonPage;
-        console.log(actualPage);
+        pokédex.removePokémonPage();
+        pokédex.addPokémonPage(actualPage.results);
+        displayPokémon();
     });
+};
+
+function displayPokémon(){
+    const pokémonBox = document.getElementById('pokémon-box');
+    pokémonBox.innerHTML = '';
+    const newPokédexPage = pokédex.pokémonArray;
+    for (let i = 0; i < newPokédexPage.length; i++) {
+        const pokémon = newPokédexPage[i];
+        pokémonBox.innerHTML += `<span>${pokémon.name}</span><br>`;
+    };
 };
