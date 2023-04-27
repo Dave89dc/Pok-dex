@@ -9,6 +9,7 @@ html, body {
     padding: 0px;
     font-family: Goldman, sans-serif;
     font-size: xx-large;
+    height: 1200px;
 }
 
 header {
@@ -34,10 +35,11 @@ header {
 .pokémon-box {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     background-color: rgba(238, 15, 15, 0.889);
-    width: 300px;
+    width: 700px;
+    height: 1300px;
     border-left: 6px solid gold;
     border-right: 6px solid gold;
     padding-top: 60px;
@@ -46,6 +48,7 @@ header {
 
 .pokémon-name {
     text-decoration: none;
+    font-size: 35px;
     color: black;
     cursor: pointer;
 }
@@ -61,7 +64,8 @@ header {
     width: 100%;
     height: 150px;
     border-top: 6px solid gold;
-    background-color: rgb(34, 113, 179);
+    background-color: rgb(34, 114, 179);
+    padding-bottom: 50px;
 }
 
 button {
@@ -72,4 +76,334 @@ button {
     font-weight: bold;
     background-color: gold;
     cursor: pointer;
+}
+
+/* Detail.html */
+
+main {
+    background-image: url(./Assets/pikachu.jpg);
+    width: 100%;
+    height: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pokemon-form {
+    width: 1200px;
+    height: 900px;
+    border: 3px solid black;
+    margin-top: 80px;
+    padding: 50px;
+    border: 6px solid gold;
+    background-color: rgba(255, 255, 255, 0.822);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-areas: 
+    'img . name name'
+    '. . . .'
+    'type type type type'
+    'a a a a'
+    's s s s'
+    '. . . .'
+    'h . . w';
+}
+
+.img-box {
+    grid-area: img;
+}
+
+.name-box {
+    grid-area: name;
+}
+
+.type-box {
+    grid-area: type;
+}
+
+.abilities-box {
+    grid-area: a;
+}
+
+.stats-box {
+    grid-area: s;
+}
+
+.height-box {
+    grid-area: h;
+}
+
+.weight-box {
+    grid-area: w;
+}
+
+.pokemon-img {
+    width: 300px;
+}
+
+.back-to-list{
+    width: 220px;
+    margin-top: 90px;
+}
+
+h1 {
+    color: rgb(34, 113, 179);
+}
+
+/* SCHERMO INIZIALE */
+
+@media screen and (max-width: 780px){
+
+    header {
+        height: auto;
+    }
+    
+    .pokémon-logo {
+        width: 350px;
+    }
+
+    .pokémon-box {
+        width: 100%;
+    }
+    
+    .pokémon-name {
+        text-decoration: none;
+        font-size: 35px;
+        color: black;
+        cursor: pointer;
+    }
+
+}
+
+@media screen and (max-width: 500px){
+
+    header {
+        height: auto;
+    }
+    
+    .pokémon-logo {
+        width: 250px;
+    }
+    
+    .pokémon-name {
+        font-size: 30px;
+    }
+
+    button {
+        margin: 20px;
+    }
+
+}
+
+@media screen and (max-width: 400px){
+
+    .button-box {
+        height: 230px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    button {
+        margin: 20px;
+    }
+
+}
+
+@media screen and (max-width: 310px){
+
+    .pokémon-logo {
+        width: 200px;
+    }
+    
+    .pokémon-name {
+        font-size: 22px;
+    }
+
+}
+
+/* SCHERMO DETTAGLI POKEMON */
+
+@media screen and (max-width: 1240px){
+
+    .pokemon-form {
+        width: 100%;
+    }
+
+    .pokemon-form {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(7, 1fr);
+        grid-template-areas: 
+        '. img img .'
+        'name name name name'
+        'type type type type'
+        'a a a a'
+        's s s s'
+        '. . . .'
+        'h h w w';
+    }
+    
+}
+
+@media screen and (max-width: 940px){
+
+    h1 {
+        font-size: 50px;
+    }
+    
+}
+
+@media screen and (max-width: 783px){
+
+    .pokemon-form {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(7, 1fr);
+        grid-template-areas: 
+        '. img img .'
+        'name name name name'
+        'type type type type'
+        'a a a a'
+        's s s s'
+        '. . . .'
+        'h h w w';
+    }
+
+}
+
+@media screen and (max-width: 600px){
+
+    .pokemon-form {
+        width: 100%;
+        height: 1000px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(9, 1fr);
+        grid-template-areas: 
+        'img img . .'
+        'name name name name'
+        'type type type type'
+        'a a a a'
+        's s s s'
+        's s s s'
+        '. . . .'
+        'h h . .'
+        'w w . .';
+    }
+
+    .back-to-list{
+        width: 220px;
+        margin-top: 20px;
+    }
+
+}
+
+@media screen and (max-width: 600px){
+
+    main {
+        height: auto;
+        background-size: cover;
+    }
+
+    .pokemon-form {
+        width: 100%;
+        height: 1100px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(10, 1fr);
+        grid-template-areas: 
+        'img img . .'
+        'name name name name'
+        'type type type type'
+        'a a a a'
+        's s s s'
+        's s s s'
+        '. . . .'
+        '. . . .'
+        'h h h h'
+        'w w w w';
+    }
+
+    .back-to-list{
+        width: 220px;
+        margin-top: 20px;
+    }
+
+}
+
+@media screen and (max-width: 452px){
+
+    .pokemon-form {
+        width: 100%;
+        height: 1180px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(10, 1fr);
+        grid-template-areas: 
+        'img img . .'
+        'name name name name'
+        'type type type type'
+        'a a a a'
+        's s s s'
+        's s s s'
+        '. . . .'
+        '. . . .'
+        'h h h h'
+        'w w w w';
+    }
+
+    h1 {
+        font-size: 45px;
+    }
+
+    .back-to-list{
+        width: 220px;
+        margin-top: 20px;
+    }
+
+    .pokemon-img {
+        width: 250px;
+    }
+
+}
+
+@media screen and (max-width: 340px){
+
+    .pokemon-form {
+        width: 100%;
+        height: 1000px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(9, 1fr);
+        grid-template-areas: 
+        'img img . .'
+        'name name name name'
+        'type type type type'
+        'a a a a'
+        's s s s'
+        's s s s'
+        '. . . .'
+        'h h h h'
+        'w w w w';
+        font-size: 25px;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .back-to-list{
+        width: 220px;
+        margin-top: 20px;
+    }
+
+    .pokemon-img {
+        width: 200px;
+    }
+
 }
