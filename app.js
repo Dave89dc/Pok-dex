@@ -12,7 +12,6 @@ function loadNextPage(){
         actualPage = pokémonPage;
         pokédex.removePokémonPage();
         pokédex.addPokémonPage(actualPage.results);
-        console.log(pokédex)
         displayPokémon();
     });
 };
