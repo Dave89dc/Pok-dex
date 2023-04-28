@@ -145,6 +145,8 @@ main {
 .back-to-list{
     width: 220px;
     margin-top: 90px;
+    background-color: rgb(34, 113, 179);
+    color: white;
 }
 
 h1 {
@@ -165,6 +167,11 @@ h1 {
 
     .pokémon-box {
         width: 100%;
+        background-color: rgba(255, 255, 255, 0.829);
+    }
+
+    .pokémon-name:hover {
+        color: black;
     }
     
     .pokémon-name {
