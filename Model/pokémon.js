@@ -1,6 +1,6 @@
 class Pokémon{
 
-    constructor(name, imageUrl, types = [], abilities = [], stats = [], height, weight){
+    constructor(name, imageUrl, height, weight, types = [], abilities = [], stats = []){
         this.name = name;
         this.types = types;
         this.imageUrl = imageUrl;
