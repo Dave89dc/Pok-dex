@@ -20,20 +20,10 @@ class Pokémon{
         this.abilities.push(newAbilities);
     };
 
-    addTypes(name){
-        const newType = new Types(name);
+    addTypes(name, url){
+        const newType = new Types(name, url);
         this.types.push(newType);
     };
-
-    typesToDisplay(){
-        const typesArray = [];
-        for (let i = 0; i < this.types.length; i++) {
-            const type = this.types[i];
-            typesArray.push(type.name);
-        };
-        return typesArray.join(', ');
-    };
-    
 
     abilitiesToDisplay(){
         const abilitiesArray = [];
@@ -43,15 +33,6 @@ class Pokémon{
         };
         return abilitiesArray.join(', ');
     };
-
-    statsToDisplay(){
-        const statsArray = [];
-        for (let i = 0; i < this.stats.length; i++) {
-            const state = this.stats[i];
-            statsArray.push(state.name + '= ' + state.baseValue);
-        };
-        return statsArray.join('/ ');
-    }
 
 };
 
@@ -74,8 +55,9 @@ class Abilities{
 
 class Types{
 
-    constructor(name){
+    constructor(name, url){
         this.name = name;
+        this.url = url;
     };
 
 };

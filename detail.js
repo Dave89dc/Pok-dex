@@ -16,9 +16,10 @@ function displayPokémon(pokemon){
     const pokemonForm = document.getElementById('pokemon-form');
     pokemonForm.innerHTML = `<div class='img-box'><img class='pokemon-img' src='${pokemon.imageUrl}' alt='${pokemon.name[0].toUpperCase()+pokemon.name.slice(1)}'></div>
                             <div class='name-box'><h1>${pokemon.name[0].toUpperCase()+pokemon.name.slice(1)}</h1></div>
-                            <div class='type-box'><strong>Types:</strong> ${pokemon.typesToDisplay()}</div>
+                            <div class='type-box'><strong>Types:</strong> ${pokemon.types.map(t =>`<a class='types-link' alt='Pokémon Types' href='./types.html?typesUrl=${t.url}'>${t.name}</a>`).join(', ')}</div>
                             <div class='abilities-box'><strong>Abilities:</strong> ${pokemon.abilitiesToDisplay()}</div>
-                            <div class='stats-box'><strong>Stats:</strong> ${pokemon.statsToDisplay()}</div>
+                            <div class='stats-box'><strong>Stats:</strong></div>
+                            <ul>${pokemon.stats.map(s =>`<li>${s.name}: ${s.baseValue}</li>`).join('')}</ul>
                             <div class='height-box'><strong>Height:</strong> ${pokemon.height}</div>
                             <div class='weight-box'><strong>Weight:</strong> ${pokemon.weight}</div>`;
 
@@ -26,9 +27,7 @@ function displayPokémon(pokemon){
 
 function createNewPokemon(pokemonObject){
 
-    const myPokemonImg = pokemonObject.sprites.front_default;
-
-    const myPokemon = new Pokémon(pokemonObject.name, myPokemonImg, pokemonObject.height, pokemonObject.weight);
+    const myPokemon = new Pokémon(pokemonObject.name, pokemonObject.sprites.front_default, pokemonObject.height, pokemonObject.weight);
 
     for (let i = 0; i < pokemonObject.stats.length; i++) {
         const statObject = pokemonObject.stats[i];
@@ -42,7 +41,7 @@ function createNewPokemon(pokemonObject){
     console.log(myPokemon.abilities);
     for (let i = 0; i < pokemonObject.types.length; i++) {
         const typesObject = pokemonObject.types[i];
-        myPokemon.addTypes(typesObject.type.name);
+        myPokemon.addTypes(typesObject.type.name, typesObject.type.url);
     };
 
     return myPokemon;
