@@ -9,7 +9,7 @@ html, body {
     padding: 0px;
     font-family: Goldman, sans-serif;
     font-size: xx-large;
-    height: 1200px;
+    height: auto;
 }
 
 header {
@@ -37,7 +37,7 @@ header {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    background-color: rgba(238, 15, 15, 0.889);
+    background-color: rgba(255, 255, 255, 0.92);;
     width: 700px;
     height: 1300px;
     border-left: 6px solid gold;
@@ -54,7 +54,7 @@ header {
 }
 
 .pokémon-name:hover {
-    color: white;
+    color: rgb(238, 15, 15);
 }
 
 .button-box {
@@ -92,7 +92,7 @@ main {
 
 .pokemon-form {
     width: 1200px;
-    height: 1050px;
+    height: 1100px;
     border: 3px solid black;
     margin-top: 80px;
     padding: 50px;
@@ -105,9 +105,9 @@ main {
     'img . name name'
     'type type type type'
     'a a a a'
-    's ul ul ul'
-    '. ul ul ul'
-    '. . . .'
+    's s s s'
+    's s s s'
+    's s s s'
     '. . . .'
     'h . . w';
 }
@@ -130,10 +130,6 @@ main {
 
 .stats-box {
     grid-area: s;
-}
-
-ul {
-    grid-area: ul;
 }
 
 .height-box {
@@ -186,7 +182,6 @@ h1 {
 
     .pokémon-box {
         width: 100%;
-        background-color: rgba(255, 255, 255, 0.829);
     }
 
     .pokémon-name:hover {
@@ -259,6 +254,7 @@ h1 {
 
     .pokemon-form {
         width: 100%;
+        height: 1400px;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(7, 1fr);
@@ -269,7 +265,7 @@ h1 {
         'a a a a'
         's s s s'
         '. . . .'
-        'h h w w';
+        'h . . w';
     }
     
 }
@@ -279,10 +275,6 @@ h1 {
     h1 {
         font-size: 50px;
     }
-    
-}
-
-@media screen and (max-width: 783px){
 
     .pokemon-form {
         width: 100%;
@@ -298,34 +290,7 @@ h1 {
         '. . . .'
         'h h w w';
     }
-
-}
-
-@media screen and (max-width: 600px){
-
-    .pokemon-form {
-        width: 100%;
-        height: 1000px;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(9, 1fr);
-        grid-template-areas: 
-        'img img . .'
-        'name name name name'
-        'type type type type'
-        'a a a a'
-        's s s s'
-        's s s s'
-        '. . . .'
-        'h h . .'
-        'w w . .';
-    }
-
-    .back-to-list{
-        width: 220px;
-        margin-top: 20px;
-    }
-
+    
 }
 
 @media screen and (max-width: 600px){
@@ -337,18 +302,17 @@ h1 {
 
     .pokemon-form {
         width: 100%;
-        height: 1100px;
+        height: 1600px;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(10, 1fr);
+        grid-template-rows: repeat(9, 1fr);
         grid-template-areas: 
-        'img img . .'
+        '. img . .'
         'name name name name'
         'type type type type'
         'a a a a'
         's s s s'
         's s s s'
-        '. . . .'
         '. . . .'
         'h h h h'
         'w w w w';
@@ -361,11 +325,11 @@ h1 {
 
 }
 
-@media screen and (max-width: 452px){
+@media screen and (max-width: 455px){
 
     .pokemon-form {
         width: 100%;
-        height: 1180px;
+        height: 1600px;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(10, 1fr);
@@ -397,11 +361,11 @@ h1 {
 
 }
 
-@media screen and (max-width: 340px){
+@media screen and (max-width: 425px){
 
     .pokemon-form {
         width: 100%;
-        height: 1000px;
+        height: 1200px;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(9, 1fr);
@@ -430,6 +394,71 @@ h1 {
 
     .pokemon-img {
         width: 200px;
+    }
+
+}
+
+@media screen and (max-width: 272px){
+
+    .pokemon-form {
+        width: 100%;
+        height: 1300px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(9, 1fr);
+        grid-template-areas: 
+        'img img . .'
+        'name name name name'
+        'type type type type'
+        'a a a a'
+        's s s s'
+        's s s s'
+        '. . . .'
+        'h h h h'
+        'w w w w';
+        font-size: 25px;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    .pokemon-img {
+        width: 150px;
+    }
+
+    .back-to-list{
+        width: 170px;
+        margin-top: 20px;
+    }
+
+}
+
+@media screen and (max-width: 230px){
+
+    .pokémon-logo {
+        width: 90%;
+    }
+
+    .pokemon-form {
+        width: 100%;
+        height: 1600px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(9, 1fr);
+        grid-template-areas: 
+        'img img . .'
+        'name name name name'
+        'type type type type'
+        'a a a a'
+        's s s s'
+        's s s s'
+        '. . . .'
+        'h h h h'
+        'w w w w';
+        font-size: 25px;
+        padding: 20px;
     }
 
 }

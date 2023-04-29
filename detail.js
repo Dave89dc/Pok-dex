@@ -15,11 +15,13 @@ PokéService.getDetail(pokemonName).then(pokemonObject => {
 function displayPokémon(pokemon){
     const pokemonForm = document.getElementById('pokemon-form');
     pokemonForm.innerHTML = `<div class='img-box'><img class='pokemon-img' src='${pokemon.imageUrl}' alt='${pokemon.name[0].toUpperCase()+pokemon.name.slice(1)}'></div>
-                            <div class='name-box'><h1>${pokemon.name[0].toUpperCase()+pokemon.name.slice(1)}</h1></div>
+                            <div class='name-box'><h1>#${numberOfPokedex(pokemon.id)} ${pokemon.name[0].toUpperCase()+pokemon.name.slice(1)}</h1></div>
                             <div class='type-box'><strong>Types:</strong> ${pokemon.types.map(t =>`<a class='types-link' alt='Pokémon Types' href='./types.html?typesUrl=${t.url}'>${t.name}</a>`).join(', ')}</div>
                             <div class='abilities-box'><strong>Abilities:</strong> ${pokemon.abilitiesToDisplay()}</div>
-                            <div class='stats-box'><strong>Stats:</strong></div>
-                            <ul>${pokemon.stats.map(s =>`<li>${s.name}: ${s.baseValue}</li>`).join('')}</ul>
+                            <div class='stats-box'>
+                                <strong>Stats:</strong>
+                                <ul>${pokemon.stats.map(s =>`<li>${s.name}: ${s.baseValue}</li>`).join('')}</ul>
+                            </div>
                             <div class='height-box'><strong>Height:</strong> ${pokemon.height}</div>
                             <div class='weight-box'><strong>Weight:</strong> ${pokemon.weight}</div>`;
 
@@ -27,7 +29,7 @@ function displayPokémon(pokemon){
 
 function createNewPokemon(pokemonObject){
 
-    const myPokemon = new Pokémon(pokemonObject.name, pokemonObject.sprites.front_default, pokemonObject.height, pokemonObject.weight);
+    const myPokemon = new Pokémon(pokemonObject.name, pokemonObject.sprites.front_default, pokemonObject.height, pokemonObject.weight, pokemonObject.id);
 
     for (let i = 0; i < pokemonObject.stats.length; i++) {
         const statObject = pokemonObject.stats[i];
@@ -46,4 +48,20 @@ function createNewPokemon(pokemonObject){
 
     return myPokemon;
 
+};
+
+function numberOfPokedex(pokemonId) {
+
+    let numberOfPokemon;
+    if(pokemonId < 10){
+        numberOfPokemon = '000' + pokemonId;
+    } else if(pokemonId >= 10 && pokemonId < 100) {
+        numberOfPokemon = '00' + pokemonId;
+    } else if(pokemonId >= 100 && pokemonId < 1000) {
+        numberOfPokemon = '0' + pokemonId;
+    } else if(pokemonId >= 1000) {
+        numberOfPokemon = pokemonId;
+    };
+    return numberOfPokemon;
+    
 };

@@ -1,6 +1,6 @@
 // let actualPage;
 
-const pokédex = new PokédexPage();
+let pokédex = new PokédexPage();
 
 // loadNextPage();
 
@@ -65,8 +65,12 @@ function loadPreviousPage(){
 
 function displayPokemon(){
     //searchParams o queryParams
-    const html = actualPage.results.map(pokémon => `<div><a class='pokémon-name' href="./detail.html?pokemon=${pokémon.name}"><strong>${pokémon.name[0].toUpperCase()+pokémon.name.slice(1)}</strong></a></div>`).join('');
+    let i = 0;
+    const html = actualPage.results.map(pokémon => `<div>
+                                                        <a class='pokémon-name' href="./detail.html?pokemon=${pokémon.name}">
+                                                            <strong>${pokémon.name[0].toUpperCase()+pokémon.name.slice(1)}</strong>
+                                                        </a>
+                                                    </div>`).join('');
     document.getElementById('pokémon-box').innerHTML = html;
+};
 
-
-}
