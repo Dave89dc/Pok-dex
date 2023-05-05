@@ -74,3 +74,52 @@ function displayPokemon(){
     document.getElementById('pokémon-box').innerHTML = html;
 };
 
+
+
+// ESERCIZIO CODEWARS
+
+// let sheep = 12;
+
+// function countSheep(num){
+//     let goodNight = '';
+//     for (let i = 0; i < num; i++) {
+//         goodNight += `${i + 1} sheep...`;
+//     };
+//     return goodNight;
+// };
+
+// console.log(countSheep(sheep));
+
+////////////////////////////////////
+
+// let numbers = [];
+
+// const sum = (array) => array.reduce((n1, n2) => n1 + n2, 0);
+
+// console.log(sum(numbers));
+
+////////////////////////////////////
+
+let numbers = [1];
+
+function minMax(arr){
+    
+    let higherNum = numbers[0];
+    let lowestNum = numbers[0];
+    if(arr.length === 1){
+        return [lowestNum, higherNum];
+    };
+    for (let i = 1; i <= arr.length; i++) {
+        let num = arr[i];
+        if(higherNum < num){
+            higherNum = num;
+        };
+        if(lowestNum > num){
+            lowestNum = num;
+        };
+    };
+    return [lowestNum, higherNum];
+
+};
+
+console.log(minMax(numbers));
